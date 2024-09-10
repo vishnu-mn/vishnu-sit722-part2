@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: book_catalog
+  name: book-catalog
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: book_catalog
+      app: book-catalog
   template:
     metadata:
       labels:
-        app: book_catalog
+        app: book-catalog
     spec:
       containers: 
-      - name: book_catalog
+      - name: book-catalog
         image: week08:1
         ports:
         - containerPort: 8000
@@ -26,10 +26,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: book_catalog
+  name: book-catalog
 spec:
   selector:
-    app: book_catalog
+    app: book-catalog
   type: NodePort
   ports:
     - protocol: TCP
