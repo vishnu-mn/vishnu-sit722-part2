@@ -16,6 +16,8 @@ spec:
       containers: 
       - name: book_catalog
         image: week08:1
+        ports:
+        - containerPort: 8000
         imagePullPolicy: Never
         env:
         - name: DATABASE_URL
@@ -33,4 +35,3 @@ spec:
     - protocol: TCP
       port: 8000
       targetPort: 8000
-      nodePort: 30000
